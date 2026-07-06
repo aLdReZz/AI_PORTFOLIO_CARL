@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Direction A — Showreel-first</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: hsl(28, 10%, 6%);
+    --text: hsl(36, 16%, 92%);
+    --muted: hsl(36, 8%, 60%);
+    --accent: hsl(37, 44%, 66%);
+    --line: hsla(38, 24%, 82%, 0.12);
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; height: 100vh; overflow: hidden; }
+  .wrap { height: 100vh; display: flex; flex-direction: column; }
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 2.2rem; z-index: 3; }
+  .wordmark { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.02em; }
+  .top-right { display: flex; align-items: center; gap: 1.6rem; }
+  .avail { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
+  .avail::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .hire { font-size: 0.82rem; padding: 0.5rem 1.15rem; border: 1px solid var(--line); border-radius: 999px; color: var(--text); }
+  .overlay { text-align: center; padding: 0.5rem 2.2rem 1.8rem; z-index: 2; }
+  .kicker { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.9rem; }
+  .statement { font-family: 'Fraunces', serif; font-size: clamp(1.7rem, 3.2vw, 2.7rem); line-height: 1.1; margin: 0 auto; max-width: 24ch; }
+  .stage { flex: 1; position: relative; overflow: hidden; }
+  .reelrow { position: absolute; inset: 0; display: flex; gap: 14px; padding: 0 2.2rem 2.2rem; align-items: center; }
+  .reel { position: relative; flex: 1; height: min(64vh, 520px); border-radius: 14px; overflow: hidden; background: #111; border: 1px solid var(--line); }
+  .reel video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .reel:nth-child(even){ transform: translateY(-1.6rem); }
+  .statement em { font-style: italic; color: var(--accent); }
+  .fade-top { position: absolute; top: 0; left: 0; right: 0; height: 120px; background: linear-gradient(var(--bg), transparent); z-index: 1; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="wordmark">Carl Sanchez</div>
+    <div class="top-right">
+      <span class="avail">Available for brands</span>
+      <span class="hire">Hire me</span>
+    </div>
+  </div>
+  <div class="overlay">
+    <div class="kicker">AI video ads · eCommerce</div>
+    <div class="statement">Short-form ads that make brands look <em>expensive.</em></div>
+  </div>
+  <div class="stage">
+    <div class="fade-top"></div>
+    <div class="reelrow">
+      <div class="reel"><video src="/assets/Video/vesta_-_nick_picks_episode_8_reel_7%20(1080p).mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel"><video src="/assets/Video/sports%201.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel"><video src="/assets/Video/livechi_x_cirrus_mini_episode_2_reel_rev4%20(1080p).mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel"><video src="/assets/Video/Coach.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel"><video src="/assets/Video/nar_-_how_compensation_can_change_(industry_facing)%20(1080p).mp4" autoplay muted loop playsinline></video></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

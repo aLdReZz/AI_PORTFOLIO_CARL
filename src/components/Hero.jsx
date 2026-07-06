@@ -1,57 +1,79 @@
+import { useEffect, useRef } from 'react'
 import { site } from '../data/site.js'
 import './Hero.css'
 
 export default function Hero() {
   const { hero } = site
+  const videoRef = useRef(null)
+
+  // Force muted so autoplay is allowed across browsers.
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true
+      videoRef.current.play?.().catch(() => {})
+    }
+  }, [])
 
   return (
     <section className="hero" id="home">
-      <div className="hero__glow" aria-hidden="true" />
-      <div className="hero__grain" aria-hidden="true" />
+      <div className="hero__pitch">
+        <div className="hero__pitch-inner">
+          <p className="eyebrow hero__kicker hero__fade" style={{ '--d': '0.1s' }}>
+            {hero.kicker}
+          </p>
 
-      <div className="hero__inner container">
-        <p className="eyebrow hero__kicker hero__fade" style={{ '--d': '0.05s' }}>
-          {hero.kicker}
-        </p>
+          <h1 className="hero__title hero__fade" style={{ '--d': '0.2s' }}>
+            {hero.headline}
+          </h1>
 
-        <h1 className="hero__title">
-          <span className="hero__fade" style={{ '--d': '0.15s' }}>
-            {hero.headlineLead}
-          </span>{' '}
-          <span className="hero__accent hero__fade" style={{ '--d': '0.28s' }}>
-            {hero.headlineAccent}
-          </span>
-        </h1>
+          <p className="hero__subhead hero__fade" style={{ '--d': '0.32s' }}>
+            {hero.subhead}
+          </p>
 
-        <p className="hero__subhead hero__fade" style={{ '--d': '0.42s' }}>
-          {hero.subhead}
-        </p>
-
-        <div className="hero__actions hero__fade" style={{ '--d': '0.55s' }}>
-          <a
-            href={hero.primaryCta.href}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn--primary"
-          >
-            {hero.primaryCta.label}
-            <span className="hero__arrow" aria-hidden="true">↗</span>
-          </a>
-          <a href={hero.secondaryCta.href} className="btn btn--ghost">
-            {hero.secondaryCta.label}
-          </a>
+          <div className="hero__actions hero__fade" style={{ '--d': '0.44s' }}>
+            <a
+              href={hero.primaryCta.href}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn--primary"
+            >
+              {hero.primaryCta.label}
+              <span className="hero__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href={hero.secondaryCta.href} className="btn btn--ghost">
+              {hero.secondaryCta.label}
+            </a>
+          </div>
         </div>
 
-        <div className="hero__meta hero__fade" style={{ '--d': '0.7s' }}>
-          <span className="hero__dot" aria-hidden="true" />
-          Available for select eCommerce brands
-        </div>
+        <ul className="hero__tools hero__fade" style={{ '--d': '0.58s' }}>
+          {hero.tools.map((t) => (
+            <li key={t} className="hero__tool">{t}</li>
+          ))}
+        </ul>
       </div>
 
-      <a href="#services" className="hero__scroll" aria-label="Scroll to services">
-        <span className="hero__scroll-line" aria-hidden="true" />
-        <span className="hero__scroll-text">Scroll</span>
-      </a>
+      <div className="hero__stage">
+        <video
+          ref={videoRef}
+          className="hero__video"
+          src={hero.reel.src}
+          poster={hero.reel.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        />
+        <div className="hero__stage-fade" aria-hidden="true" />
+        <div className="hero__stage-bar">
+          <span className="hero__caption">{hero.reel.caption}</span>
+          <span className="hero__reelno">
+            <span className="hero__rec" aria-hidden="true" />
+            {hero.reel.label}
+          </span>
+        </div>
+      </div>
     </section>
   )
 }

@@ -15,15 +15,22 @@ export const site = {
     cv: '/assets/pdf/CarlSanchez_CV.pdf',
   },
 
-  // ---- HERO ----
+  // ---- HERO (cinematic split) ----
   hero: {
-    kicker: 'AI Video Ads · eCommerce',
-    // Keep the headline two short lines; the second line is accented.
-    headlineLead: 'Scroll-stopping AI video ads for',
-    headlineAccent: 'premium eCommerce brands.',
+    kicker: 'AI video ads · eCommerce',
+    headline: 'Product ads with a cinematic finish.',
     subhead:
-      'I create AI product visuals and short-form ads for TikTok, Reels, and Shorts — running the whole pipeline solo, from first frame to final cut. Designed to feel expensive, built to convert.',
+      'AI product visuals and short-form ads for TikTok, Reels, and Shorts — generated, shot, and edited end to end. Built to stop the scroll and sell.',
     primaryCta: { label: 'Work with me', href: 'https://www.upwork.com/freelancers/carlsanchez' },
     secondaryCta: { label: 'View work', href: '#work' },
+    // The autoplaying hero reel. Swap src/poster to feature a different piece.
+    reel: {
+      src: '/assets/hero/hero-reel.mp4',
+      poster: '/assets/hero/hero-poster.jpg',
+      label: 'Reel 01',
+      caption: 'LiveChi × Cirrus — brand campaign',
+    },
+    // Subtle AI-stack strip shown under the pitch.
+    tools: ['Veo 3.1', 'Kling', 'Higgsfield', 'Nano Banana', 'CapCut'],
   },
 };
