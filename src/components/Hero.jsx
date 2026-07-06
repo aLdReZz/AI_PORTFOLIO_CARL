@@ -18,19 +18,15 @@ export default function Hero() {
     <section className="hero" id="home">
       <div className="hero__pitch">
         <div className="hero__pitch-inner">
-          <p className="eyebrow hero__kicker hero__fade" style={{ '--d': '0.1s' }}>
-            {hero.kicker}
-          </p>
-
-          <h1 className="hero__title hero__fade" style={{ '--d': '0.2s' }}>
+          <h1 className="hero__title hero__fade" style={{ '--d': '0.1s' }}>
             {hero.headline}
           </h1>
 
-          <p className="hero__subhead hero__fade" style={{ '--d': '0.32s' }}>
+          <p className="hero__subhead hero__fade" style={{ '--d': '0.24s' }}>
             {hero.subhead}
           </p>
 
-          <div className="hero__actions hero__fade" style={{ '--d': '0.44s' }}>
+          <div className="hero__actions hero__fade" style={{ '--d': '0.38s' }}>
             <a
               href={hero.primaryCta.href}
               target="_blank"
@@ -46,7 +42,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <ul className="hero__tools hero__fade" style={{ '--d': '0.58s' }}>
+        <ul className="hero__tools hero__fade" style={{ '--d': '0.5s' }}>
           {hero.tools.map((t) => (
             <li key={t} className="hero__tool">{t}</li>
           ))}
