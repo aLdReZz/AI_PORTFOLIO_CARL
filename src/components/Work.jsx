@@ -413,10 +413,6 @@ function MorphingModal({ active, phase, originRect, catLabel, close, setPhase, o
                 ))}
               </div>
             )}
-            <div className="work__modal-cta">
-              <span className="work__modal-guarantee">Not happy? I'll fix it. Guaranteed.</span>
-              <button className="work__modal-hire" onClick={onHire}>Start scaling</button>
-            </div>
           </div>
         </div>
       </div>
