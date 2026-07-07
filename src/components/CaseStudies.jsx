@@ -28,6 +28,9 @@ export default function CaseStudies() {
                     <span className="cases__chip-val">{cs.stat}</span>
                     <span className="cases__chip-label">{cs.statLabel}</span>
                   </div>
+                  <div className="cases__thumb-hover">
+                    <span>See case study</span>
+                  </div>
                 </div>
 
                 {open && (

@@ -67,6 +67,33 @@
   transform: scale(1.04);
 }
 
+.cases__thumb-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 0%, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cases__thumb-hover span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: hsla(0, 0%, 0%, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cases__thumb:hover .cases__thumb-hover {
+  opacity: 1;
+}
+
 .cases__stat-chip {
   position: absolute;
   bottom: 0.5rem;
