@@ -111,11 +111,13 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* Feather top + bottom into the page so the reel edges dissolve into black */
   background: linear-gradient(
+    180deg,
     var(--bg) 0%,
-    transparent 18%,
-    transparent 72%,
-    hsla(30, 9%, 5%, 0.55) 100%
+    hsla(30, 9%, 5%, 0) 30%,
+    hsla(30, 9%, 5%, 0) 68%,
+    var(--bg) 100%
   );
 }
 
@@ -188,16 +190,19 @@
 
   .hero__stage {
     min-height: 100vh;
-    border-left: 1px solid var(--line);
   }
 
   .hero__stage-fade {
-    background: linear-gradient(
-      90deg,
-      var(--bg) 0%,
-      transparent 20%,
-      transparent 100%
-    );
+    /* Feather the left seam plus top + bottom, no hard border */
+    background:
+      linear-gradient(90deg, var(--bg) 0%, hsla(30, 9%, 5%, 0) 26%),
+      linear-gradient(
+        180deg,
+        var(--bg) 0%,
+        hsla(30, 9%, 5%, 0) 18%,
+        hsla(30, 9%, 5%, 0) 82%,
+        var(--bg) 100%
+      );
   }
 }
 
