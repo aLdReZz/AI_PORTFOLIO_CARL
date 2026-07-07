@@ -77,6 +77,13 @@ export default function Work() {
     setOriginRect(rect)
     setActive(item)
     setPhase('entering')
+    // Start preloading the video immediately
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'video'
+    link.href = item.src
+    document.head.appendChild(link)
+    setTimeout(() => link.remove(), 5000)
   }, [])
 
   const close = useCallback(() => {
@@ -290,6 +297,7 @@ function CustomVideo({ src, poster }) {
         loop
         playsInline
         muted
+        preload="metadata"
         onTimeUpdate={handleTime}
         onEnded={() => setPlaying(false)}
       />
