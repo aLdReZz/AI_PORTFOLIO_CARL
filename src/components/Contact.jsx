@@ -1,12 +1,14 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { site } from '../data/site.js'
 import { useReveal } from '../hooks/useReveal.js'
+import HireModal from './HireModal.jsx'
 import './Contact.css'
 
 export default function Contact() {
   const ref = useRef(null)
   useReveal(ref)
   const { contact, links } = site
+  const [hireOpen, setHireOpen] = useState(false)
 
   return (
     <section className="contact section" id="contact" ref={ref}>
@@ -17,15 +19,9 @@ export default function Contact() {
           <p className="contact__intro reveal">{contact.intro}</p>
 
           <div className="contact__actions reveal">
-            <a
-              href={links.upwork}
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn--primary"
-            >
-              Work with me on Upwork
-              <span aria-hidden="true">↗</span>
-            </a>
+            <button className="btn btn--primary" onClick={() => setHireOpen(true)}>
+              Start scaling
+            </button>
             <a href={`mailto:${links.email}`} className="btn btn--ghost">
               Email
             </a>
@@ -56,6 +52,8 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      <HireModal open={hireOpen} onClose={() => setHireOpen(false)} />
     </section>
   )
 }

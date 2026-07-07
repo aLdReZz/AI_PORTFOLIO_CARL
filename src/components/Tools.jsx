@@ -3,6 +3,14 @@ import { tools } from '../data/tools.js'
 import { useReveal } from '../hooks/useReveal.js'
 import './Tools.css'
 
+const LOGO_MAP = {
+  'Veo 3.1': '/assets/img/logo-google.png',
+  'Kling': '/assets/img/logo-kling.png',
+  'Higgsfield': '/assets/img/logo-higgsfield.png',
+  'Nano Banana': '/assets/img/logo-google.png',
+  'CapCut': '/assets/img/logo-capcut.png',
+}
+
 export default function Tools() {
   const ref = useRef(null)
   useReveal(ref)
@@ -18,8 +26,18 @@ export default function Tools() {
         <ul className="tools__grid">
           {tools.items.map((item, i) => (
             <li key={item.name} className="tools__item reveal" style={{ '--i': i }}>
-              <span className="tools__name">{item.name}</span>
-              <span className="tools__role">{item.role}</span>
+              <div className="tools__icon">
+                <img
+                  className="tools__logo"
+                  src={LOGO_MAP[item.name]}
+                  alt={item.name}
+                  loading="lazy"
+                />
+              </div>
+              <div className="tools__info">
+                <span className="tools__name">{item.name}</span>
+                <span className="tools__role">{item.role}</span>
+              </div>
             </li>
           ))}
         </ul>

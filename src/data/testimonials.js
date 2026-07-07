@@ -1,10 +1,10 @@
 // ============================================================
-// TESTIMONIALS — real client quotes. Edit text/names/photos here.
+// TESTIMONIALS - real client quotes. Edit text/names/photos here.
 // ============================================================
 
 export const testimonials = {
   label: 'Testimonials',
-  heading: 'What clients say.',
+  heading: 'What clients say',
   items: [
     {
       name: 'Gio Velez',

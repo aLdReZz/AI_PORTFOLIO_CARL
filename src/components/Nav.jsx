@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { site } from '../data/site.js'
+import HireModal from './HireModal.jsx'
 import './Nav.css'
 
 const LINKS = [
@@ -11,6 +12,7 @@ const LINKS = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [hireOpen, setHireOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -34,15 +36,12 @@ export default function Nav() {
           ))}
         </nav>
 
-        <a
-          href={site.links.upwork}
-          target="_blank"
-          rel="noreferrer"
-          className="nav__cta"
-        >
-          Hire me
-        </a>
+        <button className="nav__cta" onClick={() => setHireOpen(true)}>
+          Scale now
+        </button>
       </div>
+
+      <HireModal open={hireOpen} onClose={() => setHireOpen(false)} />
     </header>
   )
 }

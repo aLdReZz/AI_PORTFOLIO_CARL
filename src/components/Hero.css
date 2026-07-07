@@ -27,7 +27,19 @@
   font-size: clamp(2.5rem, 6.2vw, 4rem);
   line-height: 1.04;
   letter-spacing: -0.02em;
-  max-width: 13ch;
+  max-width: 18ch;
+}
+
+.hero__title-acc {
+  display: inline;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent-soft);
+  background: linear-gradient(180deg, transparent 0%, transparent 35%, hsla(37, 44%, 66%, 0.35) 35%, hsla(37, 44%, 66%, 0.35) 82%, transparent 82%);
+  padding: 0 0.3rem;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .hero__subhead {
@@ -36,6 +48,30 @@
   font-size: clamp(1rem, 1.4vw, 1.12rem);
   line-height: 1.7;
   color: var(--text-muted);
+}
+
+.hero__typewrap {
+  margin-top: 1.2rem;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.02em;
+  min-height: 1.6em;
+}
+
+.hero__type-phrase {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.hero__type-cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 300;
+  animation: cursorBlink 0.7s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes cursorBlink {
+  50% { opacity: 0; }
 }
 
 .hero__actions {
@@ -110,12 +146,17 @@
   to { opacity: 1; }
 }
 
+.hero__video--exit {
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+
 /* Blend the top/bottom edges into the page on mobile stacking */
 .hero__stage-fade {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* Subtle bottom scrim only — feathering is handled by the video mask */
+  /* Subtle bottom scrim only - feathering is handled by the video mask */
   background: linear-gradient(0deg, hsla(30, 9%, 5%, 0.5) 0%, transparent 24%);
 }
 

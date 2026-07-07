@@ -1,6 +1,7 @@
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
+import Compare from './components/Compare.jsx'
 import Work from './components/Work.jsx'
 import Tools from './components/Tools.jsx'
 import About from './components/About.jsx'
@@ -15,6 +16,7 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <Compare />
         <Work />
         <Tools />
         <About />

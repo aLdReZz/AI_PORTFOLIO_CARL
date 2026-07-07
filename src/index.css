@@ -1,5 +1,5 @@
 /* ============================================================
-   CARL SANCHEZ — AI VIDEO ADS
+   CARL SANCHEZ
    Design tokens + global base
    ============================================================ */
 
@@ -19,9 +19,9 @@
   --text-muted:  hsl(36, 8%, 63%);
   --text-faint:  hsl(36, 6%, 45%);
 
-  --accent:      hsl(37, 44%, 66%);   /* champagne / soft brass */
-  --accent-soft: hsl(37, 42%, 76%);
-  --accent-dim:  hsla(37, 44%, 66%, 0.14);
+  --accent:      hsl(40, 100%, 50%);   /* #ffaa01 golden orange */
+  --accent-soft: hsl(40, 100%, 62%);
+  --accent-dim:  hsla(40, 100%, 50%, 0.15);
 
   /* ---- Typography ---- */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
@@ -94,6 +94,150 @@ button {
   color: var(--accent-soft);
 }
 
+/* ---- Hire modal ---- */
+.hire-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 0%, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: var(--gutter);
+  animation: overlayIn 0.25s ease;
+}
+
+.hire-modal {
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem 1.75rem;
+  position: relative;
+  animation: modalIn 0.3s var(--ease);
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.93) translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.hire-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text-faint);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.hire-close:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.hire-heading {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.hire-intro {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hire-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.hire-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+  text-decoration: none;
+}
+
+.hire-option:hover {
+  border-color: var(--accent-dim);
+  background: var(--surface-2);
+}
+
+.hire-option-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--accent);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.hire-option-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 7px;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+.hire-option-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.hire-option-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.hire-option-desc {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  line-height: 1.3;
+}
+
+.hire-option-arrow {
+  font-size: 1rem;
+  color: var(--text-faint);
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hire-overlay { animation: none; }
+  .hire-modal { animation: none; }
+}
+
 /* ---- Shared layout helpers ---- */
 .container {
   width: 100%;
@@ -135,10 +279,11 @@ button {
   gap: 0.5rem;
   padding: 0.95rem 1.7rem;
   border-radius: 999px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-family: 'Montserrat', var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: transform 0.4s var(--ease), background 0.4s var(--ease),
     border-color 0.4s var(--ease), color 0.4s var(--ease);
   will-change: transform;
@@ -147,11 +292,18 @@ button {
 .btn--primary {
   background: var(--accent);
   color: hsl(30, 30%, 8%);
+  animation: btnGlow 2.5s ease-in-out infinite;
 }
 
 .btn--primary:hover {
   background: var(--accent-soft);
   transform: translateY(-2px);
+  animation: none;
+}
+
+@keyframes btnGlow {
+  0%, 100% { box-shadow: 0 0 12px hsla(40, 100%, 50%, 0.3); }
+  50% { box-shadow: 0 0 28px hsla(40, 100%, 50%, 0.6); }
 }
 
 .btn--ghost {
