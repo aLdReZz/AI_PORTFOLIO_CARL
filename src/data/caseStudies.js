@@ -9,6 +9,17 @@ export const caseStudies = {
     'Not just views. Conversions, CTRs, and content that actually performed.',
   items: [
     {
+      id: 'cs-ai-video-01',
+      poster: '/assets/work/posters/ai-video-01.jpg',
+      src: '/assets/work/clips/ai-video-01.mp4',
+      problem: 'A direct-to-consumer brand needed a steady stream of product visuals for TikTok and Meta ads without the recurring cost of UGC creators or studio rentals.',
+      solution: 'I generated a series of AI lifestyle product shots and short video ads, optimized for each platform\'s format, and delivered 18 pieces in 5 days.',
+      result: '1.8M views, 4.2% CTR, 6.1% engagement rate across TikTok and Meta. Consistent output without the per-creator overhead.',
+      stat: '1.8M views',
+      statLabel: '18 pieces in 5 days',
+      brand: 'AI product showcase',
+    },
+    {
       id: 'cs-product-05',
       poster: '/assets/work/posters/product-05.jpg',
       src: '/assets/work/clips/product-05.mp4',
