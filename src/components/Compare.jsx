@@ -1,5 +1,6 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useReveal } from '../hooks/useReveal.js'
+import HireModal from './HireModal.jsx'
 import './Compare.css'
 
 const rows = [
@@ -13,6 +14,7 @@ const rows = [
 export default function Compare() {
   const ref = useRef(null)
   useReveal(ref)
+  const [hireOpen, setHireOpen] = useState(false)
 
   return (
     <section className="compare section" id="compare" ref={ref}>
@@ -65,9 +67,11 @@ export default function Compare() {
 
         <div className="compare__cta reveal">
           <p className="compare__cta-text">Ready to scale your content without the overhead?</p>
-          <a href="#contact" className="compare__cta-btn">Start scaling</a>
+          <button className="compare__cta-btn" onClick={() => setHireOpen(true)}>Start scaling</button>
         </div>
       </div>
+
+      <HireModal open={hireOpen} onClose={() => setHireOpen(false)} />
     </section>
   )
 }
