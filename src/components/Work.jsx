@@ -189,14 +189,16 @@ export default function Work() {
           className={`work__overlay ${phase === 'exiting' ? 'work__overlay--exit' : ''}`}
           onClick={close}
         >
-          <MorphingModal
-            active={active}
-            phase={phase}
-            setPhase={setPhase}
-            originRect={originRect}
-            catLabel={catLabel}
-            close={close}
-          />
+          <div className="work__overlay-scroll">
+            <MorphingModal
+              active={active}
+              phase={phase}
+              setPhase={setPhase}
+              originRect={originRect}
+              catLabel={catLabel}
+              close={close}
+            />
+          </div>
         </div>
       )}
     </section>
@@ -369,7 +371,7 @@ function MorphingModal({ active, phase, originRect, catLabel, close, setPhase })
 
   return (
     <>
-      <div className="work__modal" ref={innerRef}>
+      <div className="work__modal" ref={innerRef} onClick={(e) => e.stopPropagation()}>
         <button className="work__modal-close" onClick={close} aria-label="Close">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
             <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" fill="none" />
