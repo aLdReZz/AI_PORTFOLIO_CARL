@@ -25,9 +25,8 @@ export default function CaseStudies() {
                 key={cs.id}
                 className={`cases__card reveal ${open ? 'cases__card--open' : ''}`}
                 style={{ '--i': i }}
-                onClick={() => setExpanded(open ? null : i)}
               >
-                <div className="cases__thumb">
+                <div className="cases__thumb" onClick={() => setExpanded(open ? null : i)}>
                   <img className="cases__poster" src={cs.poster} alt={cs.brand} loading="lazy" />
                   <div className="cases__stat-chip">
                     <span className="cases__chip-val">{cs.stat}</span>
