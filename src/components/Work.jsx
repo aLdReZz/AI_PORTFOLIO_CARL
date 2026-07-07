@@ -210,15 +210,20 @@ function CustomVideo({ src, poster }) {
   const videoRef = useRef(null)
   const barRef = useRef(null)
   const [playing, setPlaying] = useState(true)
-  const [muted, setMuted] = useState(true)
+  const [muted, setMuted] = useState(false)
   const [progress, setProgress] = useState(0)
   const [dragging, setDragging] = useState(false)
 
   useEffect(() => {
     const el = videoRef.current
     if (!el) return
-    el.muted = true
-    el.play?.().catch(() => {})
+    el.muted = false
+    el.play?.().catch(() => {
+      // Browser blocked autoplay with sound — fall back to muted
+      el.muted = true
+      setMuted(true)
+      el.play?.().catch(() => {})
+    })
   }, [src])
 
   const toggle = () => {
