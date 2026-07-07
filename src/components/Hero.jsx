@@ -51,13 +51,13 @@ export default function Hero() {
 
     if (!deleting && charIdx < phrase.length) {
       // typing
-      timeout = setTimeout(() => setCharIdx(c => c + 1), 50)
+      timeout = setTimeout(() => setCharIdx(c => c + 1), 35)
     } else if (!deleting && charIdx === phrase.length) {
       // pause at full word
-      timeout = setTimeout(() => setDeleting(true), 2000)
+      timeout = setTimeout(() => setDeleting(true), 1200)
     } else if (deleting && charIdx > 0) {
       // erasing
-      timeout = setTimeout(() => setCharIdx(c => c - 1), 40)
+      timeout = setTimeout(() => setCharIdx(c => c - 1), 20)
     } else if (deleting && charIdx === 0) {
       // move to next phrase
       setDeleting(false)
