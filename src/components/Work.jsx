@@ -272,6 +272,8 @@ function MorphingModal({ active, phase, originRect, catLabel, close, setPhase })
                 loop
                 playsInline
                 controls
+                controlsList="nodownload nofullscreen"
+                onClick={(e) => e.stopPropagation()}
             />
           </div>
 
