@@ -14,7 +14,7 @@ export const testimonials = {
     {
       name: 'Robert Chung',
       photo: '/assets/img/robert.png',
-      quote: 'I needed a week\'s worth of content in 48 hours. Carl delivered 12 pieces, and the best-performing ad hit a 4.1% CTR — our highest ever on Meta. The turnaround alone saves me weeks of coordinating with creators.',
+      quote: 'I needed a week\'s worth of content in 48 hours. Carl delivered 12 pieces, and the best-performing ad hit a 4.1% CTR - our highest ever on Meta. The turnaround alone saves me weeks of coordinating with creators.',
     },
     {
       name: 'Yaakov Cahnman',

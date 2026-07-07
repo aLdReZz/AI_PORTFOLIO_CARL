@@ -4,9 +4,9 @@ import HireModal from './HireModal.jsx'
 import './Compare.css'
 
 const rows = [
-  { label: 'UGC creator fees', traditional: { main: '$500 — $2,000+', note: '1-2 output' }, ai: { main: '10 — 15 content', note: 'for price of 2 UGC hires' } },
-  { label: 'Studio rental', traditional: { main: '$300 — $800 / day', note: 'self setup + studio not always available' }, ai: { main: 'Studio-quality photo', note: 'without the hassle + no advance booking' } },
-  { label: 'Turnaround time', traditional: '2 — 4 weeks', ai: 'Days' },
+  { label: 'UGC creator fees', traditional: { main: '$500 - $2,000+', note: '1-2 output' }, ai: { main: '10 - 15 content', note: 'for price of 2 UGC hires' } },
+  { label: 'Studio rental', traditional: { main: '$300 - $800 / day', note: 'self setup + studio not always available' }, ai: { main: 'Studio-quality photo', note: 'without the hassle + no advance booking' } },
+  { label: 'Turnaround time', traditional: '2 - 4 weeks', ai: 'Days' },
   { label: 'Revision cycles', traditional: 'Multiple rounds', ai: 'Minimal' },
   { label: 'Scalability', traditional: 'Per-hire bottleneck', ai: 'Scale on demand' },
 ]

@@ -231,7 +231,7 @@ function CustomVideo({ src, poster }) {
     if (!el) return
     el.muted = false
     el.play?.().catch(() => {
-      // Browser blocked autoplay with sound — fall back to muted
+      // Browser blocked autoplay with sound - fall back to muted
       el.muted = true
       setMuted(true)
       el.play?.().catch(() => {})

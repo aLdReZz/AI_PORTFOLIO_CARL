@@ -40,7 +40,7 @@ export default function HireModal({ open, onClose }) {
             </span>
             <div className="hire-option-text">
               <span className="hire-option-title">WhatsApp <span className="hire-option-fast">Fastest reply</span></span>
-              <span className="hire-option-desc">Chat with me directly — I respond within hours</span>
+              <span className="hire-option-desc">Chat with me directly - I respond within hours</span>
             </div>
             <span className="hire-option-arrow">↗</span>
           </a>
@@ -64,7 +64,7 @@ export default function HireModal({ open, onClose }) {
             </span>
             <div className="hire-option-text">
               <span className="hire-option-title">Email me</span>
-              <span className="hire-option-desc">Work direct — no platform fees</span>
+              <span className="hire-option-desc">Work direct - no platform fees</span>
             </div>
             <span className="hire-option-arrow">↗</span>
           </a>
