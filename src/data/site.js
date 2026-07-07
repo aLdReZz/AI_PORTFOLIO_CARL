@@ -33,4 +33,28 @@ export const site = {
     // Subtle AI-stack strip shown under the pitch.
     tools: ['Veo 3.1', 'Kling', 'Higgsfield', 'Nano Banana', 'CapCut'],
   },
+
+  // ---- ABOUT ----
+  about: {
+    label: 'About',
+    heading: 'The strategy behind the scroll.',
+    photo: '/assets/img/S5407814 DP.jpg',
+    body: [
+      'I’m Carl — a video ad creator working where AI meets short-form. I make product visuals and ads for eCommerce brands: generating the imagery, cutting the edit, and delivering it ready to run.',
+      'Before AI, I spent years in social media and content strategy. So I don’t just make things that look good — I build them to convert. Every ad starts with the hook and the sell, not just the aesthetic.',
+    ],
+    facts: [
+      { k: '6+ yrs', v: 'Content & social' },
+      { k: 'Solo', v: 'Full pipeline' },
+      { k: 'Strategy', v: 'Built to convert' },
+    ],
+  },
+
+  // ---- CONTACT ----
+  contact: {
+    label: 'Contact',
+    heading: 'Let’s make something that sells.',
+    intro:
+      'Tell me about your product and where it needs to run — I’ll take it from first frame to final cut.',
+  },
 };
