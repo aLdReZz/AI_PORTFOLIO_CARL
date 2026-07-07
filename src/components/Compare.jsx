@@ -63,6 +63,12 @@ export default function Compare() {
           ))}
         </div>
 
+        <div className="compare__pricing reveal">
+          <span className="compare__pricing-label">Most projects</span>
+          <span className="compare__pricing-range">$200 — $1,500</span>
+          <span className="compare__pricing-note">depending on scope and volume</span>
+        </div>
+
         <div className="compare__cta reveal">
           <p className="compare__cta-text">Ready to scale your content without the traditional costs?</p>
           <a href="#contact" className="compare__cta-btn">Start scaling</a>
