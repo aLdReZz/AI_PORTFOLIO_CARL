@@ -218,9 +218,9 @@
 
   .cases__thumb-hover {
     opacity: 1;
-    background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.6) 0%, transparent 50%);
-    align-items: flex-end;
-    padding-bottom: 0.6rem;
+    background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.6) 0%, transparent 50%);
+    align-items: flex-start;
+    padding-top: 0.6rem;
   }
 
   .cases__thumb-hover span {
