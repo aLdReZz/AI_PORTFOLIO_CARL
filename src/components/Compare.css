@@ -154,3 +154,41 @@
     line-height: 1.2;
   }
 }
+
+/* ---- Compare CTA ---- */
+.compare__cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.compare__cta-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.compare__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  font-family: 'Montserrat', var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(30, 30%, 8%);
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+  animation: btnGlow 2.5s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.compare__cta-btn:hover {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+  animation: none;
+}

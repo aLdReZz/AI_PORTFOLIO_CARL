@@ -581,3 +581,43 @@
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
+/* ---- Lightbox CTA ---- */
+.work__modal-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.work__modal-guarantee {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.work__modal-hire {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-family: 'Montserrat', var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: hsl(30, 30%, 8%);
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+  animation: btnGlow 2.5s ease-in-out infinite;
+}
+
+.work__modal-hire:hover {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+  animation: none;
+}

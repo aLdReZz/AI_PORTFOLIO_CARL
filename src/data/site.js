@@ -48,8 +48,8 @@ export const site = {
 
   contact: {
     label: 'Contact',
-    heading: 'Got a product? Let\'s make some AI content.',
+    heading: 'Let\'s make content that sells.',
     intro:
-      'Tell me about your product and where you want to run it. I\'ll generate the visuals, cut the edit, and deliver it ready to go. No UGC creators, no studio needed.',
+      'Tell me about your product and where you want to run it. I\'ll generate the visuals, cut the edit, and deliver it ready to go. No UGC creators, no studio needed. Not happy? I\'ll fix it free.',
   },
 };

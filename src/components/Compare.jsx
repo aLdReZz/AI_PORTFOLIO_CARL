@@ -62,6 +62,11 @@ export default function Compare() {
             </div>
           ))}
         </div>
+
+        <div className="compare__cta reveal">
+          <p className="compare__cta-text">Ready to scale your content without the traditional costs?</p>
+          <a href="#contact" className="compare__cta-btn">Start scaling</a>
+        </div>
       </div>
     </section>
   )

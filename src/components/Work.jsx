@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { work } from '../data/work.js'
 import { useReveal } from '../hooks/useReveal.js'
+import HireModal from './HireModal.jsx'
 import './Work.css'
 
 function useMediaQuery(q) {
@@ -26,6 +27,7 @@ export default function Work() {
   const [active, setActive] = useState(null)
   const [originRect, setOriginRect] = useState(null)
   const [phase, setPhase] = useState('closed')
+  const [hireOpen, setHireOpen] = useState(false)
 
   const catLabel = useMemo(
     () => Object.fromEntries(work.filters.map((f) => [f.key, f.label])),
@@ -204,10 +206,13 @@ export default function Work() {
               originRect={originRect}
               catLabel={catLabel}
               close={close}
+              onHire={() => { close(); setTimeout(() => setHireOpen(true), 400) }}
             />
           </div>
         </div>
       )}
+
+      <HireModal open={hireOpen} onClose={() => setHireOpen(false)} />
     </section>
   )
 }
@@ -333,7 +338,7 @@ function CustomVideo({ src, poster }) {
   )
 }
 
-function MorphingModal({ active, phase, originRect, catLabel, close, setPhase }) {
+function MorphingModal({ active, phase, originRect, catLabel, close, setPhase, onHire }) {
   const innerRef = useRef(null)
 
   useEffect(() => {
@@ -408,6 +413,10 @@ function MorphingModal({ active, phase, originRect, catLabel, close, setPhase })
                 ))}
               </div>
             )}
+            <div className="work__modal-cta">
+              <span className="work__modal-guarantee">Not happy? I'll fix it. Guaranteed.</span>
+              <button className="work__modal-hire" onClick={onHire}>Start scaling</button>
+            </div>
           </div>
         </div>
       </div>
