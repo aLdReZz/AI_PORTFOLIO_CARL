@@ -21,7 +21,7 @@ export default function Nav() {
 
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
-      <div className="nav__inner container">
+      <div className="nav__inner">
         <a href="#home" className="nav__logo">
           {site.name}
         </a>
