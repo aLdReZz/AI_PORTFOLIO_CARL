@@ -213,6 +213,18 @@
 
 @media (max-width: 640px) {
   .cases__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cases__thumb-hover {
+    opacity: 1;
+    background: linear-gradient(0deg, hsla(0, 0%, 0%, 0.6) 0%, transparent 50%);
+    align-items: flex-end;
+    padding-bottom: 0.6rem;
+  }
+
+  .cases__thumb-hover span {
+    font-size: 0.55rem;
+    padding: 0.25rem 0.5rem;
   }
 }
