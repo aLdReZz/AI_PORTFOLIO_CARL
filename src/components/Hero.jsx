@@ -41,12 +41,6 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        <ul className="hero__tools hero__fade" style={{ '--d': '0.5s' }}>
-          {hero.tools.map((t) => (
-            <li key={t} className="hero__tool">{t}</li>
-          ))}
-        </ul>
       </div>
 
       <div className="hero__stage">
