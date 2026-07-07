@@ -40,7 +40,12 @@ export default function CaseStudies() {
                   )}
                 </div>
 
-                <div className="cases__body">
+                <div className="cases__body" onClick={(e) => e.stopPropagation()}>
+                  <button className="cases__close" onClick={() => setExpanded(null)} aria-label="Close">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                  </button>
                   <div className="cases__block">
                     <span className="cases__block-label">Problem</span>
                     <p className="cases__block-text">{cs.problem}</p>

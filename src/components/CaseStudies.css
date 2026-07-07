@@ -154,6 +154,27 @@
   pointer-events: auto;
 }
 
+.cases__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: hsla(0, 0%, 0%, 0.4);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cases__close:hover {
+  background: hsla(0, 0%, 0%, 0.7);
+}
+
 .cases__block {
   display: flex;
   flex-direction: column;
