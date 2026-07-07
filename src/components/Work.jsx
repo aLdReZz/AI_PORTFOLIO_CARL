@@ -203,6 +203,71 @@ export default function Work() {
   )
 }
 
+/* ---- Custom minimalist video player ---- */
+function CustomVideo({ src, poster }) {
+  const videoRef = useRef(null)
+  const [playing, setPlaying] = useState(true)
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el) return
+    el.muted = true
+    el.play?.().catch(() => {})
+  }, [src])
+
+  const toggle = () => {
+    const el = videoRef.current
+    if (!el) return
+    if (el.paused) { el.play(); setPlaying(true) }
+    else { el.pause(); setPlaying(false) }
+  }
+
+  const handleTime = () => {
+    const el = videoRef.current
+    if (!el || !el.duration) return
+    setProgress(el.currentTime / el.duration)
+  }
+
+  const seek = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width
+    const el = videoRef.current
+    if (el && el.duration) el.currentTime = x * el.duration
+    setProgress(x)
+  }
+
+  return (
+    <div className="cvideo" onClick={(e) => e.stopPropagation()}>
+      <video
+        ref={videoRef}
+        className="cvideo__el"
+        src={src}
+        poster={poster}
+        autoPlay
+        loop
+        playsInline
+        onTimeUpdate={handleTime}
+        onEnded={() => setPlaying(false)}
+      />
+      <div className="cvideo__overlay" onClick={toggle}>
+        {!playing && (
+          <span className="cvideo__play-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        )}
+      </div>
+      <div className="cvideo__bar" onClick={seek}>
+        <div className="cvideo__track">
+          <div className="cvideo__fill" style={{ width: `${progress * 100}%` }} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function MorphingModal({ active, phase, originRect, catLabel, close, setPhase }) {
   const innerRef = useRef(null)
 
@@ -264,17 +329,7 @@ function MorphingModal({ active, phase, originRect, catLabel, close, setPhase })
         <div className="work__modal-body">
           <div className="work__modal-inner">
             <div className="work__modal-video-wrap">
-              <video
-                className="work__modal-video"
-                src={active.src}
-                poster={active.poster}
-                autoPlay
-                loop
-                playsInline
-                controls
-                controlsList="nodownload nofullscreen"
-                onClick={(e) => e.stopPropagation()}
-            />
+              <CustomVideo src={active.src} poster={active.poster} />
           </div>
 
           <div className="work__modal-footer">
