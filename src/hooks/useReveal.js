@@ -7,10 +7,11 @@ export function useReveal(ref) {
     const root = ref?.current
     if (!root) return
 
-    const els = root.querySelectorAll('.reveal')
+    const els = [...root.querySelectorAll('.reveal')]
+    const revealAll = () => els.forEach((el) => el.classList.add('is-visible'))
 
     if (!('IntersectionObserver' in window)) {
-      els.forEach((el) => el.classList.add('is-visible'))
+      revealAll()
       return
     }
 
@@ -27,6 +28,15 @@ export function useReveal(ref) {
     )
 
     els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
+
+    // Fail-safe: some embedded/headless renderers never deliver observer
+    // callbacks. If that happens, reveal everything so content is never
+    // stuck invisible.
+    const failsafe = setTimeout(revealAll, 2500)
+
+    return () => {
+      io.disconnect()
+      clearTimeout(failsafe)
+    }
   }, [ref])
 }

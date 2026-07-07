@@ -1,5 +1,5 @@
 .hero {
-  min-height: 100svh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -89,7 +89,7 @@
   position: relative;
   overflow: hidden;
   background: #0c0b0a;
-  min-height: 56svh;
+  min-height: 56vh;
 }
 
 .hero__video {
@@ -187,7 +187,7 @@
   }
 
   .hero__stage {
-    min-height: 100svh;
+    min-height: 100vh;
     border-left: 1px solid var(--line);
   }
 
