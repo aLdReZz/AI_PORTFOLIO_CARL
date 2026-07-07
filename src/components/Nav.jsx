@@ -6,6 +6,7 @@ import './Nav.css'
 const LINKS = [
   { label: 'Work', href: '#work' },
   { label: 'Services', href: '#services' },
+  { label: 'Case Studies', href: '#cases' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]

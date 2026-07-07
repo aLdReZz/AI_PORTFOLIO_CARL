@@ -1,6 +1,7 @@
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
+import CaseStudies from './components/CaseStudies.jsx'
 import Compare from './components/Compare.jsx'
 import Work from './components/Work.jsx'
 import Tools from './components/Tools.jsx'
@@ -16,6 +17,7 @@ export default function App() {
       <main>
         <Hero />
         <Services />
+        <CaseStudies />
         <Compare />
         <Work />
         <Tools />
